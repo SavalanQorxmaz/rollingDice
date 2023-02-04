@@ -1,12 +1,22 @@
 
 
+const frameBack = document.getElementById("frameBack");
+const line1 = document.getElementById("line1")
+
+let deg = 0;
+function rotate(){
+    
+    frameBack.style.transform = `rotateY(${deg}deg)`;
+    
+    deg += 0.2
+
+    if(deg == 360){
+        deg = 0
+    }
 
 
-let urlimg = location.href + 'img/'
-console.log(urlimg)
-console.log(location.href)
 
-const image = document.getElementById("image");
-console.log(image.getAttribute("src"))
+    requestAnimationFrame(rotate)
 
-// image.setAttribute("src", "/assets/img/2.jpg") 
+}
+requestAnimationFrame(rotate)
